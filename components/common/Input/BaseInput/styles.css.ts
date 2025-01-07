@@ -15,7 +15,7 @@ export const baseInput = style({
     color: styles.colors.gray[800],
     backgroundColor: styles.colors.white,
     border: `1px solid ${styles.colors.gray[200]}`,
-    boxShadow: `0px 4px 4px 0px ${styles.colors.shadow[400]}`,
+    boxShadow: `0px 4px 4px 0px ${styles.colors.shadow[100]}`,
     borderRadius: '30px',
 
     ':focus': {
