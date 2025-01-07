@@ -1,3 +1,4 @@
+import DateTimeSelect from '@/app/(dashboard)/route/components/RouteSearchPanel/DateTimeSelect'
 import SquareButton from '@/components/common/Button/SquareButton'
 import SearchInput from '@/components/common/Input/SearchInput'
 
@@ -20,42 +21,8 @@ const RouteSearchPanel = () => {
 
             <div className={styles.searchSection}>
                 <h3 className={styles.sectionTitle}>기간 검색</h3>
-                <p className={styles.label}>시작 일시</p>
-                <div className={styles.selectGroup}>
-                    <select className={styles.select}>
-                        <option>2024년</option>
-                    </select>
-                    <select className={styles.select}>
-                        <option>05월</option>
-                    </select>
-                    <select className={styles.select}>
-                        <option>06월</option>
-                    </select>
-                    <select className={styles.select}>
-                        <option>00시</option>
-                    </select>
-                    <select className={styles.select}>
-                        <option>30분</option>
-                    </select>
-                </div>
-                <p className={styles.label}>종료 일시</p>
-                <div className={styles.selectGroup}>
-                    <select className={styles.select}>
-                        <option>2024년</option>
-                    </select>
-                    <select className={styles.select}>
-                        <option>05월</option>
-                    </select>
-                    <select className={styles.select}>
-                        <option>06월</option>
-                    </select>
-                    <select className={styles.select}>
-                        <option>00시</option>
-                    </select>
-                    <select className={styles.select}>
-                        <option>30분</option>
-                    </select>
-                </div>
+                <DateTimeSelect label='시작 일시' />
+                <DateTimeSelect label='종료 일시' />
             </div>
             <SquareButton>경로 조회하기</SquareButton>
         </div>

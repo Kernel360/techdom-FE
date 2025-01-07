@@ -1,8 +1,12 @@
+import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from '@mantine/core'
+
 import NavBar from '@/components/layout/NavBar'
 import '@/styles'
 import { layoutContainer, mainContent } from '@/styles/layout.css'
 
 import type { Metadata } from 'next'
+
+import '@mantine/core/styles.css'
 
 export const metadata: Metadata = {
     title: 'Tech-DOM',
@@ -11,11 +15,16 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <html lang='ko' className='trancy-ko'>
+        <html lang='ko' className='trancy-ko' {...mantineHtmlProps}>
+            <head>
+                <ColorSchemeScript />
+            </head>
             <body className={layoutContainer}>
-                <NavBar />
-                <main className={mainContent}>{children}</main>
-                <div id='modal-root'></div>
+                <MantineProvider>
+                    <NavBar />
+                    <main className={mainContent}>{children}</main>
+                    <div id='modal-root'></div>
+                </MantineProvider>
             </body>
         </html>
     )

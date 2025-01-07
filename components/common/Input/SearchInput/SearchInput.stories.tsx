@@ -36,6 +36,7 @@ const meta: Meta<typeof SearchInput> = {
 export default meta
 
 type StoryType = StoryObj<typeof SearchInput>
+
 export const Default: StoryType = {
     args: {
         placeholder: '검색어를 입력하세요',
