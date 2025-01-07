@@ -7,28 +7,23 @@ import BaseInput from '../BaseInput'
 
 import * as styles from './styles.css'
 
-type SizeType = 'small' | 'medium' | 'large'
-
-interface SearchInputProps extends Omit<ComponentPropsWithoutRef<'input'>, 'size'> {
+interface SearchInputProps extends ComponentPropsWithoutRef<'input'> {
     icon?: string
-    size?: SizeType
     className?: string
 }
 
-const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
-    ({ icon, size = 'medium', className = '', ...props }, ref) => {
-        return (
-            <div className={`${styles.container} ${styles.sizeVariants[size]} ${className}`}>
-                <BaseInput ref={ref} className={styles.input} {...props} />
-                {icon && (
-                    <div className={styles.iconWrapper}>
-                        <Image src={icon} alt='서치인풋 아이콘' width={32} height={32} />
-                    </div>
-                )}
-            </div>
-        )
-    },
-)
+const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(({ icon, className = '', ...props }, ref) => {
+    return (
+        <div className={styles.container}>
+            <BaseInput ref={ref} className={`${styles.input} ${className}`} {...props} />
+            {icon && (
+                <div className={styles.iconWrapper}>
+                    <Image src={icon} alt='서치인풋 아이콘' width={32} height={32} />
+                </div>
+            )}
+        </div>
+    )
+})
 
 SearchInput.displayName = 'SearchInput'
 

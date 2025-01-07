@@ -7,6 +7,7 @@ export const container = style({
 })
 
 export const searchInputWrapper = style({
+    width: '390px',
     position: 'absolute',
     top: '2rem',
     right: '2rem',

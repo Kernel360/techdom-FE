@@ -39,7 +39,6 @@ type StoryType = StoryObj<typeof SearchInput>
 export const Default: StoryType = {
     args: {
         placeholder: '검색어를 입력하세요',
-        size: 'medium',
         icon: '/icons/search-icon.svg',
     },
 }
@@ -47,7 +46,6 @@ export const Default: StoryType = {
 export const VehicleRegistrationPlate: StoryType = {
     args: {
         placeholder: '차량을 검색하세요.',
-        size: 'small',
         icon: '/icons/pink-search-icon.svg',
     },
 }
@@ -55,7 +53,6 @@ export const VehicleRegistrationPlate: StoryType = {
 export const DarkTheme: StoryType = {
     args: {
         placeholder: '차량을 검색하세요.',
-        size: 'large',
         icon: '/icons/black-search-icon.svg',
     },
 }

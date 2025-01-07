@@ -9,7 +9,7 @@ const LocationPage = () => {
         <div className={styles.container}>
             <Map />
             <div className={styles.searchInputWrapper}>
-                <SearchInput icon='/icons/search-icon.svg' size='large' />
+                <SearchInput icon='/icons/search-icon.svg' />
             </div>
             <div className={styles.vehicleStatusWrapper}>
                 <VehicleStatus />
