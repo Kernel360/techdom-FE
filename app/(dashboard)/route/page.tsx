@@ -1,5 +1,7 @@
 import Map from '@/app/(dashboard)/location/components/Map'
 import { BaseButton } from '@/components/common/Button/BaseButton'
+import { RoundButton } from '@/components/common/Button/RoundButton'
+import SquareButton from '@/components/common/Button/SquareButton'
 import SearchInput from '@/components/common/Input/SearchInput'
 
 import * as styles from './styles.css'
@@ -62,11 +64,28 @@ const RoutePage = () => {
                     </div>
                 </div>
 
+                <RoundButton
+                // style={{
+                //     width: '100%',
+                //     height: '54px',
+                // }}
+                >
+                    경로 조회하기
+                </RoundButton>
+                <SquareButton
+                    color='primary'
+                    // style={{
+                    //     width: '100%',
+                    //     height: '54px',
+                    // }}
+                >
+                    경로 조회하기
+                </SquareButton>
                 <BaseButton
-                    style={{
-                        width: '100%',
-                        height: '54px',
-                    }}
+                // style={{
+                //     width: '100%',
+                //     height: '54px',
+                // }}
                 >
                     경로 조회하기
                 </BaseButton>

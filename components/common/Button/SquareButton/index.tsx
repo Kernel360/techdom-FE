@@ -14,7 +14,7 @@ interface SquareButtonProps extends ComponentPropsWithoutRef<'button'> {
 }
 const SquareButton = ({ children, color = 'primary', ...props }: SquareButtonProps) => {
     return (
-        <BaseButton className={styles.button({ color })} {...props}>
+        <BaseButton className={styles.button[color]} {...props}>
             {children}
         </BaseButton>
     )
