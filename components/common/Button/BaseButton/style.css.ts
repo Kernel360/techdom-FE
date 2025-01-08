@@ -14,7 +14,7 @@ export const base = style({
     borderRadius: '8px',
     ':disabled': {
         cursor: 'not-allowed',
-        opacity: 0.5,
+        opacity: styles.opacity[50],
         color: styles.colors.black,
     },
 })

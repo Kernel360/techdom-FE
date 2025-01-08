@@ -7,7 +7,7 @@ export const button = styleVariants({
         backgroundColor: styles.colors.primary,
         color: styles.colors.white,
         ':hover': {
-            opacity: 0.8,
+            opacity: styles.opacity[80],
         },
     },
     white: {
@@ -22,7 +22,7 @@ export const button = styleVariants({
         backgroundColor: styles.colors.error,
         color: styles.colors.white,
         ':hover': {
-            opacity: 0.8,
+            opacity: styles.opacity[80],
         },
     },
     dark: {

@@ -92,10 +92,16 @@ export const zIndex = {
     below: '-1',
 }
 
+const opacity = {
+    80: '0.8',
+    50: '0.5',
+}
+
 export const styles = createGlobalTheme(':root', {
     breakPoints,
     colors,
     fontSizes,
     fontWeights,
     zIndex,
+    opacity,
 })
