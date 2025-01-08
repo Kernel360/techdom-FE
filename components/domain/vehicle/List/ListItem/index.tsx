@@ -16,7 +16,7 @@ const ListItem = ({ variant, data }: ListType) => {
                     <span className={styles.itemContent}>{logData.vehicleModel}</span>
                     {/* TODO 데이터 상태에 따라 변경 및 onClick 넣기  */}
                     <span className={styles.itemContent}>
-                        <Badge shape={'rectangle'} variant={'운행중'}></Badge>
+                        <Badge shape={'rectangle'} variant={logData.status as '운행중' | '미운행' | '미관제'} />
                     </span>
                     <div className={styles.icon}>{logData.icon}</div>
                 </div>
