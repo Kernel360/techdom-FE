@@ -1,10 +1,10 @@
 'use client'
 
+import ListHeader from '@/app/(dashboard)/log/components/ListHeader'
 import { RoundButton } from '@/components/common/Button/RoundButton'
 import SearchInput from '@/components/common/Input/SearchInput'
 import ListItem from '@/components/domain/vehicle/List/ListItem'
 import { VehicleLogProps } from '@/components/domain/vehicle/List/ListItem/types'
-import ListHeader from '@/components/domain/vehicle/ListHeader'
 import { RightIcon } from '@/public/icons'
 
 import * as styles from './styles.css'
@@ -21,7 +21,7 @@ const LogPage = () => {
         <div>
             <div className={styles.componentsWrapper}>
                 <div className={styles.buttonWrapper}>
-                    <RoundButton color='primary' onClick={() => {}} size='small'>
+                    <RoundButton color='secondary' onClick={() => {}} size='small'>
                         등록
                     </RoundButton>
                 </div>

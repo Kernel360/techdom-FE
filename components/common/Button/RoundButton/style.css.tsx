@@ -31,7 +31,7 @@ export const button = recipe({
                 color: styles.colors.primary,
             },
             secondary: {
-                color: styles.colors.black,
+                color: styles.colors.gray[700],
             },
         },
     },

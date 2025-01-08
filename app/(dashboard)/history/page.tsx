@@ -3,9 +3,9 @@
 import SearchInput from '@/components/common/Input/SearchInput'
 import ListItem from '@/components/domain/vehicle/List/ListItem'
 import { VehicleHistoryProps } from '@/components/domain/vehicle/List/ListItem/types'
-import ListHeader from '@/components/domain/vehicle/ListHeader'
 import { RightIcon } from '@/public/icons'
 
+import ListHeader from './components/ListHeader'
 import * as styles from './styles.css'
 
 const HistoryPage = () => {
@@ -23,8 +23,10 @@ const HistoryPage = () => {
     }
     return (
         <div>
-            <div className={styles.searchInputWrapper}>
-                <SearchInput icon='/icons/search-icon.svg' />
+            <div className={styles.componentsWrapper}>
+                <div className={styles.searchInputWrapper}>
+                    <SearchInput icon='/icons/search-icon.svg' />
+                </div>
             </div>
 
             <div className={styles.listWrapper}>
