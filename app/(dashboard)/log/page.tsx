@@ -1,12 +1,12 @@
 'use client'
 
-import ListHeader from '@/app/(dashboard)/log/components/ListHeader'
 import { RoundButton } from '@/components/common/Button/RoundButton'
 import SearchInput from '@/components/common/Input/SearchInput'
 import ListItem from '@/components/domain/vehicle/List/ListItem'
 import { VehicleLogProps } from '@/components/domain/vehicle/List/ListItem/types'
 import { RightIcon } from '@/public/icons'
 
+import ListHeader from './components/ListHeader'
 import * as styles from './styles.css'
 
 const LogPage = () => {
