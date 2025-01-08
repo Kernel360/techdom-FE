@@ -32,11 +32,11 @@ const ListItem = ({ variant, data }: ListType) => {
                 <span className={styles.itemContent}>{historyData.vehicleNumber}</span>
                 <span className={styles.itemContent}>{historyData.department}</span>
                 <span className={styles.itemContent}>{historyData.name}</span>
-                <span className={styles.itemContent}>{historyData.drivingDays}</span>
-                <span className={styles.itemContent}>{historyData.averageDrivingDistance}</span>
-                <span className={styles.itemContent}>{historyData.averageDrivingTime}</span>
-                <span className={styles.itemContent}>{historyData.totalDrivingDistance}</span>
-                <span className={styles.itemContent}>{historyData.drivingRate}</span>
+                <span className={styles.itemContent}>{historyData.drivingDays}일</span>
+                <span className={styles.itemContent}>{historyData.averageDrivingDistance}km</span>
+                <span className={styles.itemContent}>{historyData.averageDrivingTime}분</span>
+                <span className={styles.itemContent}>{historyData.totalDrivingDistance}km</span>
+                <span className={styles.itemContent}>{historyData.drivingRate}%</span>
                 <div className={styles.icon}>{historyData.icon}</div>
             </div>
         </div>
