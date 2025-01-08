@@ -23,6 +23,7 @@ export const button = recipe({
             large: {
                 color: styles.colors.primary,
                 height: '60px',
+                padding: '16px 24px',
             },
         },
         color: {

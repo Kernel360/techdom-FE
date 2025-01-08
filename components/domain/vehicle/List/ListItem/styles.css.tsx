@@ -5,7 +5,7 @@ import { styles } from '@/styles/theme.css'
 export const itemWrapper = style({
     display: 'flex',
     alignItems: 'center',
-    gap: '16px',
+    textAlign: 'center',
     padding: '16px',
     borderBottom: `1px solid ${styles.colors.gray[200]}`,
     color: styles.colors.black,

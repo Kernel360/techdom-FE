@@ -12,13 +12,11 @@ const ListItem = ({ variant, data }: ListType) => {
         return (
             <div className={logData.className}>
                 <div className={styles.itemWrapper}>
-                    <span className={styles.itemContent}>{logData.id}</span>
                     <span className={styles.itemContent}>{logData.vehicleNumber}</span>
                     <span className={styles.itemContent}>{logData.vehicleModel}</span>
-                    <span className={styles.itemContent}>{logData.operationDate}</span>
                     {/* TODO 데이터 상태에 따라 변경 및 onClick 넣기  */}
                     <span className={styles.itemContent}>
-                        <Badge shape={'circle'} variant={'운행중'}></Badge>
+                        <Badge shape={'rectangle'} variant={'운행중'}></Badge>
                     </span>
                     <div className={styles.icon}>{logData.icon}</div>
                 </div>
