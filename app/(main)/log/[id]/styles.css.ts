@@ -35,3 +35,15 @@ export const tableCell = style({
     borderRight: `1px solid ${vars.colors.gray[200]}`,
     color: vars.colors.black,
 })
+
+export const linkButton = style({
+    color: vars.colors.white,
+    backgroundColor: vars.colors.dark,
+    fontWeight: vars.fontWeights.bold,
+    padding: '16px 24px',
+    textAlign: 'center',
+    borderRadius: '8px',
+    ':hover': {
+        backgroundColor: vars.colors.gray[800],
+    },
+})

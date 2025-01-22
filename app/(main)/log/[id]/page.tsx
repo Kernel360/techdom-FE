@@ -1,11 +1,12 @@
 'use client'
 
+import Breadcrumb from '@/components/common/Breadcrumb'
+import LinkButton from '@/components/common/Button/LinkButton'
 import { RoundButton } from '@/components/common/Button/RoundButton'
-import SquareButton from '@/components/common/Button/SquareButton'
 
 import * as styles from './styles.css'
 
-const VehicleDetailPage = () => {
+const DetailPage = () => {
     // TODO: 실제 데이터로 교체하기
     const mockData = {
         vehicleNumber: '123가4567',
@@ -29,7 +30,7 @@ const VehicleDetailPage = () => {
 
     return (
         <div className={styles.container}>
-            {/* TODO: BreadCrumb 컴포넌트 */}
+            <Breadcrumb type={'운행일지'} />
             <div className={styles.buttonGroup}>
                 <RoundButton color='secondary' size={'small'}>
                     엑셀
@@ -142,10 +143,11 @@ const VehicleDetailPage = () => {
                 </tr>
             </table>
 
-            {/* TODO: LinkButton으로 교체 */}
-            <SquareButton color='dark'>운행내역 조회</SquareButton>
+            <LinkButton href={'/log'} className={styles.linkButton}>
+                일별 및 시간별 조회
+            </LinkButton>
         </div>
     )
 }
 
-export default VehicleDetailPage
+export default DetailPage
