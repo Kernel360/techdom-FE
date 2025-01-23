@@ -1,11 +1,9 @@
 import { Select } from '@mantine/core'
-import React from 'react'
 
+import VehicleRegisterForm from '@/app/(main)/log/components/VehicleRegisterForm'
 import SquareButton from '@/components/common/Button/SquareButton'
 import BaseInput from '@/components/common/Input/BaseInput'
 import SearchInput from '@/components/common/Input/SearchInput'
-
-import VehicleRegisterForm from '../components/VehicleRegisterForm'
 
 import * as styles from './styles.css'
 

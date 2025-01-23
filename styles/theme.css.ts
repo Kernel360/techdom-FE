@@ -45,8 +45,8 @@ export const colors = {
         200: '#ad8cdb',
     },
     gray: {
-        50: '#f6f6f6', // 호버 색상
-        100: '#f7f7f7', // 테이블 배경 색상
+        50: '#f7f7f7', // 호버 색상
+        100: '#f6f6f6', // 테이블 배경 색상
         200: '#ebebeb', // border 색상
         300: '#dddddd', // 테이블 선 색상
         400: '#d3d3d3',
@@ -89,6 +89,9 @@ export const zIndex = {
     overlay: '40',
     dropdown: '30',
     header: '20',
+    four: '4',
+    third: '3',
+    second: '2',
     default: '1',
     below: '-1',
 }

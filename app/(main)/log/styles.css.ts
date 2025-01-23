@@ -2,13 +2,12 @@ import { style } from '@vanilla-extract/css'
 
 export const container = style({
     height: '100vh',
-    padding: '20px',
+    padding: '40px 44px',
     overflowY: 'auto',
 })
 
 export const contents = style({
     display: 'flex',
     flexDirection: 'column',
-    gap: '16px',
-    marginTop: '40px',
+    marginTop: '20px',
 })

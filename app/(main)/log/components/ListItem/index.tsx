@@ -10,7 +10,7 @@ interface ListItemProps {
 }
 
 const ListItem = ({ data, onClick }: ListItemProps) => {
-    const { vehicleNumber, vehicleModel, drivingDays, totalDrivingDistance, status } = data
+    const { vehicleNumber, vehicleModel, drivingDays, totalDistance, status } = data
 
     return (
         <button className={styles.container} onClick={onClick} type='button'>
@@ -18,7 +18,7 @@ const ListItem = ({ data, onClick }: ListItemProps) => {
                 <li className={styles.itemWrapper}>{vehicleNumber}</li>
                 <li className={styles.itemWrapper}>{vehicleModel}</li>
                 <li className={styles.itemWrapper}>{drivingDays}일</li>
-                <li className={styles.itemWrapper}>{totalDrivingDistance}km</li>
+                <li className={styles.itemWrapper}>{totalDistance.toLocaleString('ko-KR')}km</li>
                 <li className={styles.itemWrapper}>
                     <Badge shape={'rectangle'} variant={status} />
                 </li>

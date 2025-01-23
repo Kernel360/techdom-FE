@@ -1,11 +1,10 @@
 export interface ListItemModel {
     id: number
     vehicleNumber: string
-    department: string
-    name: string
+    vehicleModel: string
     drivingDays: number
-    averageDrivingDistance: number
-    averageDrivingTime: number
-    totalDrivingDistance: number
-    drivingRate: React.ReactNode
+    totalDistance: number
+    status: VehicleStatusType
 }
+
+type VehicleStatusType = '운행중' | '미운행' | '미관제'
