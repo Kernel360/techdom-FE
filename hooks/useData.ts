@@ -11,8 +11,8 @@ interface UseDataProps {
     path: PathType
 }
 
-export const useData = ({ url, params, path }: UseDataProps) => {
-    const [data, setData] = useState<unknown>()
+export const useData = <T>({ url, params, path }: UseDataProps) => {
+    const [data, setData] = useState<T>()
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
 

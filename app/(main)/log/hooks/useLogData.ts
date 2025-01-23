@@ -1,30 +1,13 @@
-import { useEffect, useState } from 'react'
-
-import { apiClient } from '@/lib/apis/client'
+import { useData } from '@/hooks/useData'
 
 import { LogListResponse } from '../types'
 
 export const useLogData = () => {
-    const [logData, setLogData] = useState<LogListResponse>()
-    const [isLoading, setIsLoading] = useState(true)
-    const [error, setError] = useState<string | null>(null)
+    const { data, isLoading, error } = useData<LogListResponse>({
+        url: '/api/v1/driving-log?page=1&size=10',
+        params: { page: 1, size: 10 },
+        path: 'LOG',
+    })
 
-    const handleGetLogData = async () => {
-        try {
-            setIsLoading(true)
-            const response = await apiClient.get('/api/v1/driving-log?page=1&size=10')
-            setLogData(response.data.result)
-        } catch (error: unknown) {
-            setError('데이터 불러오기 실패')
-            console.error('Error', error)
-        } finally {
-            setIsLoading(false)
-        }
-    }
-
-    useEffect(() => {
-        handleGetLogData()
-    }, [])
-
-    return { logData, isLoading, error }
+    return { logData: data, isLoading, error }
 }

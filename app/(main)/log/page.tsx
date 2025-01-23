@@ -37,9 +37,9 @@ const LogPage = () => {
             <div className={styles.contents}>
                 <ControlBar onExcelButtonClick={handleExcelButtonClick} />
                 <ListHeader headerTitles={HEADER_TITLES} />
-                {logData?.content
-                    .slice(0, 8)
-                    .map((log) => <ListItem key={log.id} data={log} onClick={() => handleItemClick(log.id)} />)}
+                {logData?.content.map((log) => (
+                    <ListItem key={log.id} data={log} onClick={() => handleItemClick(log.id)} />
+                ))}
             </div>
             {/* TODO 페이지네이션 추가 */}
         </div>
