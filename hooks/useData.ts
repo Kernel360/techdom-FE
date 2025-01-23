@@ -3,15 +3,15 @@ import { useEffect, useState } from 'react'
 import { DATA_PATHS } from '@/constants/data'
 import { apiClient } from '@/lib/apis/client'
 
-type DataPathType = keyof typeof DATA_PATHS
+type PathType = keyof typeof DATA_PATHS
 
 interface UseDataProps {
     url: string
     params?: Record<string, string | number>
-    dataPath: DataPathType
+    path: PathType
 }
 
-export const useData = ({ url, params, dataPath }: UseDataProps) => {
+export const useData = ({ url, params, path }: UseDataProps) => {
     const [data, setData] = useState<unknown>()
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
@@ -20,7 +20,7 @@ export const useData = ({ url, params, dataPath }: UseDataProps) => {
         try {
             setIsLoading(true)
             const response = await apiClient.get(url, { params })
-            setData(response.data[dataPath])
+            setData(response.data[path])
         } catch (error) {
             setError('데이터 불러오기 실패')
             console.error('Error', error)
@@ -31,7 +31,7 @@ export const useData = ({ url, params, dataPath }: UseDataProps) => {
 
     useEffect(() => {
         getData()
-    }, [url, JSON.stringify(params), dataPath])
+    }, [url, JSON.stringify(params), path])
 
     return { data, isLoading, error }
 }
