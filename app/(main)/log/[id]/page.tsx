@@ -7,25 +7,39 @@ import { RoundButton } from '@/components/common/Button/RoundButton'
 import * as styles from './styles.css'
 
 const DetailPage = () => {
-    // TODO: 실제 데이터로 교체하기
     const mockData = {
-        vehicleNumber: '123가4567',
-        vehicleModel: '제네시스',
-        taxStartPeriod: '2024-01-01',
-        taxEndPeriod: '2024-12-31',
-        businessId: 1,
-        businessName: '무지개렌트',
-        businessRegistrationNumber: '123-45-67890',
-        usageDate: '2024-01-14',
-        userId: 1,
-        departmentName: '영업팀',
-        name: '홍길동',
-        mileageBefore: 50000,
-        mileageAfter: 50150,
-        totalMileage: 150,
-        commutingMileage: 30,
-        businessMileage: 120,
-        notes: '거래처 방문',
+        taxStartPeriod: '2020-01-01',
+        taxEndPeriod: '2025-01-01',
+        businessInfo: {
+            businessName: '카카오',
+            businessRegistrationNumber: '123-45-67890',
+        },
+        taxPeriodDistance: 920,
+        taxPeriodBusinessDistance: 8,
+        businessUseRatio: 42,
+        vehicleType: {
+            vehicleNumber: '457나7179',
+            vehicleModel: 'GV90',
+        },
+        records: [
+            {
+                usageDate: '2025-01-01',
+                user: {
+                    departmentName: '세일팀',
+                    name: '회장',
+                },
+                drivingInfo: {
+                    drivingBefore: 10000,
+                    drivingAfter: 10030,
+                    totalDriving: 30,
+                    businessDrivingDetails: {
+                        usePurpose: 'NORMAL',
+                        drivingDistance: 30,
+                    },
+                    notes: '일반업무용',
+                },
+            },
+        ],
     }
 
     return (
@@ -50,8 +64,8 @@ const DetailPage = () => {
                     </th>
                 </tr>
                 <tr>
-                    <td className={styles.tableCell}>{mockData.vehicleNumber}</td>
-                    <td className={styles.tableCell}>{mockData.vehicleModel}</td>
+                    <td className={styles.tableCell}>{mockData.vehicleType.vehicleNumber}</td>
+                    <td className={styles.tableCell}>{mockData.vehicleType.vehicleModel}</td>
                 </tr>
             </table>
 
@@ -69,13 +83,13 @@ const DetailPage = () => {
                     <th scope='row' className={styles.tableHeader}>
                         상호명
                     </th>
-                    <td className={styles.tableCell}>{mockData.businessName}</td>
+                    <td className={styles.tableCell}>{mockData.businessInfo.businessName}</td>
                 </tr>
                 <tr>
                     <th scope='row' className={styles.tableHeader}>
                         사업자 등록번호
                     </th>
-                    <td className={styles.tableCell}>{mockData.businessRegistrationNumber}</td>
+                    <td className={styles.tableCell}>{mockData.businessInfo.businessRegistrationNumber}</td>
                 </tr>
             </table>
 
@@ -114,17 +128,27 @@ const DetailPage = () => {
                         비고
                     </th>
                 </tr>
-                <tr>
-                    <td className={styles.tableCell}>{mockData.usageDate}</td>
-                    <td className={styles.tableCell}>{mockData.departmentName}</td>
-                    <td className={styles.tableCell}>{mockData.name}</td>
-                    <td className={styles.tableCell}>{mockData.mileageBefore}km</td>
-                    <td className={styles.tableCell}>{mockData.mileageAfter}km</td>
-                    <td className={styles.tableCell}>{mockData.totalMileage}km</td>
-                    <td className={styles.tableCell}>{mockData.commutingMileage}km</td>
-                    <td className={styles.tableCell}>{mockData.businessMileage}km</td>
-                    <td className={styles.tableCell}>{mockData.notes}</td>
-                </tr>
+                {mockData.records.map((data) => (
+                    <tr key={data.drivingInfo.drivingAfter}>
+                        <td className={styles.tableCell}>{data.usageDate}</td>
+                        <td className={styles.tableCell}>{data.user.departmentName}</td>
+                        <td className={styles.tableCell}>{data.user.name}</td>
+                        <td className={styles.tableCell}>{data.drivingInfo.drivingBefore}km</td>
+                        <td className={styles.tableCell}>{data.drivingInfo.drivingAfter}km</td>
+                        <td className={styles.tableCell}>{data.drivingInfo.totalDriving}km</td>
+                        <td className={styles.tableCell}>
+                            {data.drivingInfo.businessDrivingDetails.usePurpose === 'COMMUTE'
+                                ? data.drivingInfo.businessDrivingDetails.drivingDistance + 'km'
+                                : ''}
+                        </td>
+                        <td className={styles.tableCell}>
+                            {data.drivingInfo.businessDrivingDetails.usePurpose !== 'COMMUTE'
+                                ? data.drivingInfo.businessDrivingDetails.drivingDistance + 'km'
+                                : ''}
+                        </td>
+                        <td className={styles.tableCell}>{data.drivingInfo.notes}</td>
+                    </tr>
+                ))}
             </table>
             <table>
                 <tr>
