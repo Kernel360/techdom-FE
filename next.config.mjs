@@ -1,11 +1,16 @@
 import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin'
 
-const withVanillaExtract = createVanillaExtractPlugin()
+const withVanillaExtract = createVanillaExtractPlugin({
+    outputCss: {
+        filePrefix: 'module', // .module.css로 출력
+    },
+})
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     webpack(config) {
         const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'))
+
         if (fileLoaderRule) {
             fileLoaderRule.exclude = /\.svg$/
         }
