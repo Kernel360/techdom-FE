@@ -28,6 +28,12 @@ export const vehicleAPI = {
 
         return response.data.result
     },
+    // 시동 여부에 따른 차량 현황 조회
+    getVehicleStatus: async () => {
+        const response = await apiClient.get(`${API_URL}/api/v1/vehicles/status`)
+
+        return response.data.result
+    },
     fetchVehicleRoutesData: async () => {
         // fetchVehicleRoutesData: async (vehicleId: string, startDate: DateTime, endDate: DateTime, interval = 60) => {
         // const formattedStartDate = formatToISODate(startDate)

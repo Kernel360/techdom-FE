@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { MapMarker, MarkerClusterer } from 'react-kakao-maps-sdk'
 
 import VehicleDetailsCard from '@/app/(main)/location/components/VehicleDetailsCard'
 import VehicleMarker from '@/app/(main)/location/components/VehicleMarker'
@@ -10,11 +9,8 @@ import SearchInput from '@/components/common/Input/SearchInput'
 import Modal from '@/components/common/Modal'
 import { ModalMessageType } from '@/components/common/Modal/types'
 import Map from '@/components/domain/map/Map'
-import { MARKER_IMAGE } from '@/constants/map'
 import { useSearchSingleVehicle } from '@/hooks/useSearchSingleVehicle'
 import { vehicleAPI } from '@/lib/apis'
-import koreaLocation from '@/mock/metropolitan_coordinates.json'
-import { vars } from '@/styles/theme.css'
 import { VehicleDetailsModel, VehicleInfoModel } from '@/types/vehicle'
 
 import * as styles from './styles.css'
@@ -52,50 +48,6 @@ const LocationPage = () => {
                 {isVehicleMarkerVisible && (
                     <VehicleMarker vehicleInfo={vehicleInfo} onVehicleClick={handleVehicleClick} />
                 )}
-                <MarkerClusterer
-                    averageCenter={true}
-                    styles={[
-                        {
-                            width: '40px',
-                            height: '40px',
-                            background: '#ed968490',
-                            borderRadius: '50%',
-                            color: vars.colors.black,
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            fontWeight: 'bold',
-                        },
-                        {
-                            width: '60px',
-                            height: '60px',
-                            background: '#008a8590',
-                            borderRadius: '50%',
-                            color: vars.colors.black,
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            fontWeight: 'bold',
-                        },
-                        {
-                            width: '80px',
-                            height: '80px',
-                            background: '#ff385c80',
-                            borderRadius: '50%',
-                            color: vars.colors.black,
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            fontWeight: 'bold',
-                        },
-                    ]}
-                    calculator={[10, 30, 50]}
-                    gridSize={100}
-                >
-                    {koreaLocation.map((marker, index) => (
-                        <MapMarker key={index} position={marker} image={MARKER_IMAGE} />
-                    ))}
-                </MarkerClusterer>
             </Map>
             <div className={styles.searchInputWrapper}>
                 <SearchInput
